@@ -1,0 +1,3 @@
+D:/MrMas/iticu-eee/first-year/BIL_131/simple-post-midterm-project/stopwatch-and-countdown-timer/cmake-build-debug/CMakeFiles/stopwatch_and_countdown_timer.dir
+D:/MrMas/iticu-eee/first-year/BIL_131/simple-post-midterm-project/stopwatch-and-countdown-timer/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/MrMas/iticu-eee/first-year/BIL_131/simple-post-midterm-project/stopwatch-and-countdown-timer/cmake-build-debug/CMakeFiles/rebuild_cache.dir

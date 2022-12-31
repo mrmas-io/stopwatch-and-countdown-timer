@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "stopwatch_and_countdown_timer",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "stopwatch_and_countdown_timer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stopwatch_and_countdown_timer-Debug-ee555fc9568b5a70f24a.json",
+					"name" : "stopwatch_and_countdown_timer",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/MrMas/iticu-eee/first-year/BIL_131/simple-post-midterm-project/stopwatch-and-countdown-timer/cmake-build-debug",
+		"source" : "D:/MrMas/iticu-eee/first-year/BIL_131/simple-post-midterm-project/stopwatch-and-countdown-timer"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
