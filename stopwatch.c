@@ -5,7 +5,7 @@
 void stopwatch()
 {
     main_one:
-    clear();
+    clear();    //Clear Screen, Set Console Cursor  Position, & Prints banner
     set_cursor(Y+3, X);
     printf("<");
     for (int i = 0; i <= 78; i++) {
@@ -42,27 +42,27 @@ void stopwatch()
         fflush(stdout);  // flush the output buffer
         set_cursor(Y+16, Z+2);
 
-        if (kbhit())
+        if (kbhit()) //Detects if a key is pressed
         {
             c = getch();
-            if(c == 'l' || c == 'L')
+            if(c == 'l' || c == 'L') //Laps the timer if L is pressed
             {
-                lap_hour = hour, lap_minute = minute, lap_second = second, lap_millisecond = millisecond;
-                set_cursor(Y+16, Z+=2);
+                lap_hour = hour, lap_minute = minute, lap_second = second, lap_millisecond = millisecond; //saves a copy of the timer to a temporary variable & prints it as lap
+                set_cursor(Y+16, Z+=2); //Sets the cursor position and print the lap time
                 printf("Lap %d:  %02d : %02d : %02d : %02d\n", ++lap, lap_hour, lap_minute, lap_second, lap_millisecond);
                 continue;
             }
-            else if(c == 'p' || c == 'P'){
+            else if(c == 'p' || c == 'P'){ //Pauses the timer if P is pressed
                 ch = getch();
-                if (ch == 'c' || ch == 'C')
+                if (ch == 'c' || ch == 'C') //Continues the timer if C is pressed while paused
                 {
                     continue;
                 }
-                else if (ch == 'r' || ch == 'R')
+                else if (ch == 'r' || ch == 'R') //Resets the timer is R is pressed while paused
                 {
                     goto main_one;
                 }
-                else if (ch == 'm' || ch == 'M')
+                else if (ch == 'm' || ch == 'M') //Goes back to main menu if M is pressed while the timer is paused
                 {
                     menu();
                 }
@@ -71,7 +71,7 @@ void stopwatch()
                     //continue;
                 }
             }
-            else if (c == CTRL(c))
+            else if (c == CTRL(c)) //Exits the program if CTRL+C is pressed
             {
                 set_cursor(Y+16,Z+=2);
                 exit(0);

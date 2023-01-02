@@ -13,7 +13,7 @@
 #include <termios.h>
 #include <sys/select.h>
 //Function for the getch() function for unix.
-extern int getch() {
+extern int getch() {//getch function for unix system.
     struct termios old_tio, new_tio;
     int c;
 
@@ -27,16 +27,16 @@ extern int getch() {
     tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);
     return c;
 }
-#define color() system("tput setab 103; setab 34")
-#define clear() system("clear")
-#define delay(k) sleep(k/1000)
+#define color() system("tput setab 103; setab 34") //Set the background color to light yellow and text color to dark blue
+#define clear() system("clear")                    //Clear terminal
+#define delay(k) sleep(k/1000)                     //Pauses for 'n' number of seconds
 #else
 #include <windows.h>
 #include <conio.h>
 #define getch() getch()
-#define color() system("COLOR E1")
-#define clear() system("CLS")
-#define delay(k) Sleep(k)
+#define color() system("COLOR E1")  //Set the background color to light yellow and text color to dark blue
+#define clear() system("CLS")       //Clear console
+#define delay(k) Sleep(k)           //Pauses for 'n' seconds.
 #endif
 #define CTRL(key) ((key) & 0x1f)
 void menu();
@@ -44,10 +44,13 @@ void stopwatch();
 void countdown();
 int X=2, Y=26, Z=17, hour, minute, second, millisecond;
 extern void set_cursor(int y, int x)
-{
-    //function to set the cursor position.
+{   //function to set the cursor position.
     printf("\033[%d;%dH", x, y);
+    //The X value moves the cursor horizontally/ to 'n' number of spaces
+    //The Y value moves the cursor vertically
 }
+
+//macros to delete a character, Not that necessary.
 #define del(n) do { \
     for (int i = 0; i < n; i++) { \
         putchar('\b'); \

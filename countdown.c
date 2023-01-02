@@ -6,8 +6,8 @@
 void countdown()
 {
     main_two:
-    clear();
-    set_cursor(Y+3, X);
+    clear();                        //Clear terminal
+    set_cursor(Y+3, X);       //Set console cursor position & print the banner
     printf("<");
     for (int i = 0; i <= 74; i++)
     {
@@ -21,17 +21,19 @@ void countdown()
     printf(">");
 
     millisecond = 0;
-    set_cursor(Y+6, X+2);
+    set_cursor(Y+6, X+2); //Set cursor position
     printf("%c Enter the time in Hour :: Minute :: Seconds : ", 0xAF);
     scanf("%d %d %d", &hour, &minute, &second);
 
 
     while (1)
     {
+        //Runs until all condition within the loop is satisfied.
         set_cursor(Y+18, X+6);
         printf("%02d : %02d : %02d : %02d\r", hour, minute, second, millisecond);
         fflush(stdout);  // flush the output buffer
-        
+
+        //Instructions.
         set_cursor(Y+6, X+12);
         printf("\xAF Press 'P' to pause the timer!...");
         set_cursor(Y+6, X+14);
@@ -39,13 +41,13 @@ void countdown()
 
         set_cursor(Y+18, X+8);
         delay(1); // pause for a second
-        if (kbhit()){
+        if (kbhit()){ //Detects if a key is pressed
             char qh = getch();
-            if (qh == 'p' || qh == 'P'){
+            if (qh == 'p' || qh == 'P'){ //pauses if P is pressed
                 char xh = getch();
-                if (xh == 'r' || xh == 'R')
+                if (xh == 'r' || xh == 'R') //Resets the timer if R is pressed while paused
                 {
-                    clear();
+                    clear(); //clear terminal
                     goto main_two;
                 }
                 continue;

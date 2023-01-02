@@ -4,15 +4,16 @@
 
 int main()
 {
-    clear();
-    color();
-    menu();
+
+    clear(); // Clear console
+    color(); //Set console color
+    menu();  // Display the main menu
     return 0;
 }
 void menu()
 {
     clear();
-    set_cursor(Y+3, X); //set the cursor position.
+    set_cursor(Y+3, X); //set console cursor position & show the MAIN MENU banner
     printf("<");
     for (int i = 0; i <= 80; i++)
     {
@@ -25,6 +26,7 @@ void menu()
     }
     printf(">");
 
+    // Show the options available in the program
     set_cursor(Y+6, X+2);
     printf("This program contains a stopwatch and a countdown timer.");
     set_cursor(Y+6, X+4);
@@ -39,16 +41,16 @@ void menu()
     set_cursor(Y+9, X+10);
     switch (getch())
     {
-        case '1' :
+        case '1' :          // Run the stopwatch if user clicks '1'
             stopwatch();
             break;
-        case '2' :
+        case '2' :          // Run the countdown timer if user clicks '2'
             countdown();
             break;
-        case CTRL('c') :
+        case CTRL('c') :    // Exit the program if user clicks CTRL+C or CTRL+q
         case CTRL('q') :
             exit(0);
-        default :
+        default :           // Go to the option label if any other key is pressed
             goto options;
     }
 }

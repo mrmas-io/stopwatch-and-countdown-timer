@@ -1,6 +1,7 @@
 ## Overview
 This C project consists of a stopwatch and a countdown timer. 
-The project has four files: **[main.c](main.c)**, **[stopwatch.c](stopwatch.c)**, **[countdown.c](countdown.c)**, and **[essentials.h](essentials.h)**. It was built using the [CLION IDE](https://www.jetbrains.com/clion/download/).
+
+It was built using the [CLION IDE](https://www.jetbrains.com/clion/download/) and it has four files: **[main.c](main.c)**, **[stopwatch.c](stopwatch.c)**, **[countdown.c](countdown.c)**, and **[essentials.h](essentials.h)**.
 * The **[main.c](main.c)** program file that handles user input and calls the appropriate functions.
 * The **[essentials.h](essentials.h)** file contains the declarations for the functions used in the project.
 * The **[stopwatch.c](stopwatch.c)** file contains the function that runs the stopwatch.
@@ -9,13 +10,13 @@ The project has four files: **[main.c](main.c)**, **[stopwatch.c](stopwatch.c)**
 > > ![stopwatch_screenshot](.idea/stopwatch.PNG)
 > > ![countdown_screenshot](.idea/countdown.PNG)
 ## Features
-* **The countdown timer has a single feature:**
+* **The countdown timer has one feature:**
   1. [X] It counts down from a specified number of hours, minutes, and seconds.
 
 * **The stopwatch has the following features:**
 
   1. [X] **Lap:** This feature allows the user to record the current time of the stopwatch and display it on the screen.
-  2. [X] **Pause:** This feature allows the user to pause the stopwatch at any time.
+  2. [X] **Pause:** The pause feature allows the user to pause the stopwatch at any time.
   3. [X] **Reset:** This feature allows the user to reset the stopwatch to 0.
 
 ## Building and Running the Project
