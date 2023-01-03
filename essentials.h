@@ -12,6 +12,7 @@
 #include <unistd.h>
 #include <termios.h>
 #include <sys/select.h>
+#include <fcntl.h>
 //Function for the getch() function for unix.
 extern int getch() {//getch function for unix system.
     struct termios old_tio, new_tio;
@@ -30,6 +31,32 @@ extern int getch() {//getch function for unix system.
 #define color() system("tput setab 103; setab 34") //Set the background color to light yellow and text color to dark blue
 #define clear() system("clear")                    //Clear terminal
 #define delay(k) sleep(k/1000)                     //Pauses for 'n' number of seconds
+int kbhit(void)
+{
+  struct termios oldt, newt;
+  int ch;
+  int oldf;
+  
+  tcgetattr(STDIN_FILENO, &oldt);
+  newt = oldt;
+  newt.c_lflag &= ~(ICANON | ECHO);
+  tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+  oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
+  fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
+  
+  ch = getchar();
+  
+  tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+  fcntl(STDIN_FILENO, F_SETFL, oldf);
+  
+  if(ch != EOF)
+  {
+    ungetc(ch, stdin);
+    return 1;
+  }
+  
+  return 0;
+}
 #else
 #include <windows.h>
 #include <conio.h>
